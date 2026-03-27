@@ -310,7 +310,7 @@ app.get('/google/insights', requireSecret, async (req, res) => {
       impressions: parseInt(r.metrics?.impressions || 0), clicks: parseInt(r.metrics?.clicks || 0),
       spend: ((r.metrics?.costMicros || 0) / 1_000_000).toFixed(2), ctr: parseFloat(r.metrics?.ctr || 0).toFixed(4),
       cpc: ((r.metrics?.averageCpc || 0) / 1_000_000).toFixed(2), conversions: parseFloat(r.metrics?.conversions || 0).toFixed(2),
-      cpl: parseFloat(r.metrics?.costPerConversion || 0 / 1_000_000).toFixed(2)
+      cpl: ((r.metrics?.costPerConversion || 0) / 1_000_000).toFixed(2)
     }));
     res.json({ data: rows, total: rows.length });
   } catch (err) {
