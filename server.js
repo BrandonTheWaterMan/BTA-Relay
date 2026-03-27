@@ -718,7 +718,7 @@ app.post('/submit-finance-app', async (req, res) => {
 </div>
 
 <div style="background:#1E2A35; padding:14px 24px; border-radius:0 0 8px 8px; text-align:center;">
-  <p style="color:#888; font-size:11px; margin:0;">CFL Water Treatment LLC · (386) 349-0533 · Admin@BreakingTheAlgorithm.com</p>
+  <p style="color:#888; font-size:11px; margin:0;">CFL Water Treatment LLC · (386) 349-0533 · admin@cflwatertreatment.com</p>
 </div>
 
 </body>
@@ -731,8 +731,8 @@ app.post('/submit-finance-app', async (req, res) => {
         'Content-Type':  'application/json'
       },
       body: JSON.stringify({
-        personalizations: [{ to: [{ email: 'Admin@BreakingTheAlgorithm.com', name: 'Brandon Sheets' }] }],
-        from:    { email: 'Admin@BreakingTheAlgorithm.com', name: 'The Water App' },
+        personalizations: [{ to: [{ email: 'admin@cflwatertreatment.com', name: 'Brandon Sheets' }] }],
+        from:    { email: 'admin@cflwatertreatment.com', name: 'CFL Water Treatment LLC' },
         reply_to: { email: email, name: `${firstName} ${lastName}` },
         subject: `Finance Application — ${firstName} ${lastName} — ${investment}`,
         content: [{ type: 'text/html', value: emailBody }]
